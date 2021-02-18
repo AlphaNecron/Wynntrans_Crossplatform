@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="500"
+        x:Class="Wynntrans_CrossAva.MainWindow"
+        Height="500"
+        Width="750"
+        MinWidth="750"
+        MinHeight="500"
+        MaxWidth="750"
+        MaxHeight="500"
+        FontFamily="Default"
+        Title="Wynntrans">
+    <Grid Margin="4">
+        <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <DockPanel>
+            <ToggleButton x:Name="TsLanguage" Content="Wynnic" Click="LanguageChanged" Margin="14, 4, 4 ,4"/>
+            <Button x:Name="BtnTranslate" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="4" Click="Translate" Content="Translate"/>
+            <Button x:Name="BtnCopy" HorizontalAlignment="Right" Margin="4,4,16,4" Click="CopyToClipboard" Content="Copy"/>
+            <TextBlock x:Name="TextInfo" Margin="4, 4, 4, 4" Foreground="#FFF" VerticalAlignment="Center"/>
+            </DockPanel>
+        </StackPanel>
+            <TextBox x:Name="TbInput" Width="715" Height="250" Margin="8" DockPanel.Dock="Top"/>
+            <TextBox x:Name="TbOutput" DockPanel.Dock="Bottom" Width="715" Margin="8" IsReadOnly="True"/>
+        </DockPanel>
+    </Grid>
+</Window>
