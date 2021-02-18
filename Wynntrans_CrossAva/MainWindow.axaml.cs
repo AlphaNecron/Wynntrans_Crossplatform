@@ -25,7 +25,7 @@ namespace Wynntrans_CrossAva
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-            GetControl<TextBox>("TbOutput").ContextMenu.FontFamily = FontFamily.Default;
+            GetControl<TextBox>("TbOutput").ContextMenu = null;
             GetControl<TextBlock>("TextInfo").Text = $"Platform: {OS.GetOS().ToString()} | Made with ❤ by AlphaNecron";
         }
 
@@ -55,9 +55,8 @@ namespace Wynntrans_CrossAva
             var output = GetControl<TextBox>("TbOutput");
             output.Text = string.Empty;
             output.FontFamily = _language == Translator.Language.Wynnic
-                ? FontFamily.Parse("Wynnic") // The context menu is affected either...
+                ? FontFamily.Parse("Wynnic")
                 : FontFamily.Default;
-            output.ContextMenu.FontFamily = FontFamily.Default;
             button.Content = _language.ToString();
         }
 
