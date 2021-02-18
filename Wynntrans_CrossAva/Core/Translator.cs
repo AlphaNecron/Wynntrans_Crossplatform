@@ -10,10 +10,10 @@ namespace Wynntrans_CrossAva.Core
             Wynnic = 0,
             Gavellian = 1
         }
-        private static char[] WynnicBaseCharset = "abcdefghijklmnopqrstuvwxyz123456789.!?".ToCharArray();
-        private static char[] WynnicCharset = "⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵⑴⑵⑶⑷⑸⑹⑺⑻⑼０１２".ToCharArray();
-        private static char[] GavellianBaseCharset = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-        private static char[] GavellianCharset = "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ".ToCharArray();
+        private static readonly char[] WynnicBaseCharset = "abcdefghijklmnopqrstuvwxyz123456789.!?".ToCharArray();
+        private static readonly char[] WynnicCharset = "⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵⑴⑵⑶⑷⑸⑹⑺⑻⑼０１２".ToCharArray();
+        private static readonly char[] GavellianBaseCharset = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+        private static readonly char[] GavellianCharset = "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ".ToCharArray();
 
         public static string StringConverter(string str, Language language)
         {

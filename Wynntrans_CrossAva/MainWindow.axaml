@@ -17,7 +17,7 @@
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <DockPanel>
             <ToggleButton x:Name="TsLanguage" Content="Wynnic" Click="LanguageChanged" Margin="14, 4, 4 ,4"/>
-            <Button x:Name="BtnTranslate" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="4" Click="Translate" Content="Translate"/>
+            <Button x:Name="BtnTranslate" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="4" IsDefault="True" Click="Translate" Content="Translate"/>
             <Button x:Name="BtnCopy" HorizontalAlignment="Right" Margin="4,4,16,4" Click="CopyToClipboard" Content="Copy"/>
             <TextBlock x:Name="TextInfo" Margin="4, 4, 4, 4" Foreground="#FFF" VerticalAlignment="Center"/>
             </DockPanel>

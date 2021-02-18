@@ -1,11 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using TextCopy;
 using Wynntrans_CrossAva.Core;
 
 namespace Wynntrans_CrossAva
@@ -14,7 +12,7 @@ namespace Wynntrans_CrossAva
     {
         private Translator.Language _language = Translator.Language.Wynnic;
         private string _translatedText = string.Empty;
-        public MainWindow()
+        public MainWindow() // TODO: Add more features.
         {
             InitializeComponent();
 #if DEBUG
@@ -26,7 +24,7 @@ namespace Wynntrans_CrossAva
         {
             AvaloniaXamlLoader.Load(this);
             GetControl<TextBox>("TbOutput").ContextMenu = null;
-            GetControl<TextBlock>("TextInfo").Text = $"Platform: {OS.GetOS().ToString()} | Made with ❤ by AlphaNecron";
+            GetControl<TextBlock>("TextInfo").Text = $"Platform: {Os.GetOs().ToString()} | Made with ❤ by AlphaNecron";
         }
 
         private T GetControl<T>(string name) where T : class, IControl => this.FindControl<T>(name);
@@ -60,10 +58,10 @@ namespace Wynntrans_CrossAva
             button.Content = _language.ToString();
         }
 
-        private void CopyToClipboard(object i, RoutedEventArgs e)
+        private async void CopyToClipboard(object i, RoutedEventArgs _)
         {
             if (string.IsNullOrEmpty(_translatedText) || string.IsNullOrWhiteSpace(_translatedText)) return;
-            ClipboardService.SetText(_translatedText);
+            await Clipboard.SetText(_translatedText);
         }
     }
 }
